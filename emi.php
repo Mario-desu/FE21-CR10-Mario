@@ -1,6 +1,6 @@
 <?php 
 require_once 'actions/db_connect.php';
-$sql = "SELECT * FROM library";
+$sql = "SELECT * FROM library WHERE pubName ='EMI'";
 $result = mysqli_query($connect ,$sql);
 $tbody=''; //this variable will hold the body for the table
 if(mysqli_num_rows($result)  > 0) {     
@@ -10,9 +10,10 @@ if(mysqli_num_rows($result)  > 0) {
             <td>" .$row['title']."</td>
             <td>" .$row['authFirstName']." ".$row['authLastName']."</td>
             <td>" .$row['ISBN']."</td>
+            <td>" .$row['description']."</td>
             <td>" .$row['publishDate']."</td>
             <td>" .$row['mediaType']."</td>
-            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm mb-1' type='button'>Edit</button></a>
             <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             <td><a href='details.php?id=" .$row['id']."'><button class='btn btn-info btn-sm' type='button'>Show Media</button></a></td>
             </tr>";
@@ -30,40 +31,37 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR10 Mario CRUD</title>
-        <!--Bootstrap component-->
         <?php require_once 'components/boot.php'?>
         <link rel="stylesheet" href="css/styles.css">
+
     </head>
     <body>
-        <!--Navbar-component-->
-       <?php include_once "components/nav.php";?>
-
-
+               <!--Navbar-component-->
+        <?php include_once "components/nav.php";?>
 
         <div class="manageProduct w-75 mt-3 mb-5">    
-            <div class='mb-3'>
-                <a href= "create.php"><button class='btn btn-primary'type="button" >Add media</button></a>
-            </div>
-            <p class='h2'>Media</p>
+
+            <p class='h2'>EMI</p>
             <table class='table table-striped'>
-                <thead class='table-style'>
+                <thead class='table-success'>
                     <tr>
                         <th>Picture</th>
                         <th>Title</th>
                         <th>Author/Artist/Director</th>
                         <th>ISBN</th>
+                        <th>Description</th>
                         <th>Publish Date</th>
                         <th>Type</th>
                         <th>Action</th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody class="bg-light">
+                <tbody class='bg-light'>
                     <?php echo "$tbody";?>
                 </tbody>
             </table>
         </div>
-         <!--Footer-component-->
-       <?php include_once "components/footer.php";?>
+        <!--Footer-component-->
+        <?php include_once "components/footer.php";?>
     </body>
 </html>

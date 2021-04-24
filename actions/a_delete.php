@@ -3,10 +3,10 @@ require_once 'db_connect.php';
 
 if ($_POST) {
     $id = $_POST['id'];
-    $picture = $_POST['picture'];
-    ($picture =="product.png")?: unlink("../pictures/$picture");
+    $image = $_POST['image'];
+    ($image =="product.png")?: unlink("../pictures/$image");
 
-    $sql = "DELETE FROM products WHERE id = {$id}";
+    $sql = "DELETE FROM library WHERE id = {$id}";
     if ($connect->query($sql) === TRUE) {
         $class = "success";
         $message = "Successfully Deleted!";

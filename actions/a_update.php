@@ -3,27 +3,36 @@ require_once 'db_connect.php';
 require_once 'file_upload.php';
 
 if ($_POST) {    
-    $name = $_POST['name'];
-    $price = $_POST['price'];
+    $title = $_POST['title'];
+    $authFirstName = $_POST['authFirstName'];
+    $authLastName = $_POST['authLastName'];
+    $ISBN = $_POST['ISBN'];
+    $description = $_POST['description'];
+    $publishDate = $_POST['publishDate'];
+    $mediaType = $_POST['mediaType'];
+    $status = $_POST['status'];
+    $pubName = $_POST['pubName'];
+    $pubAddress = $_POST['pubAddress'];
+    $pubSize = $_POST['pubSize'];
     $id = $_POST['id'];
     //variable for upload pictures errors is initialized
     $uploadError = '';
 
-    $picture = file_upload($_FILES['picture']);//file_upload() called  
-    if($picture->error===0){
-        ($_POST["picture"]=="product.png")?: unlink("../pictures/$_POST[picture]");           
-        $sql = "UPDATE products SET name = '$name', price = $price, picture = '$picture->fileName' WHERE id = {$id}";
+    $image = file_upload($_FILES['image']);//file_upload() called  
+    if($image->error===0){
+        ($_POST["image"]=="product.png")?: unlink("../pictures/$_POST[image]");           
+        $sql = "UPDATE library SET title = '$title', authFirstName = '$authFirstName', authLastName = '$authLastName', ISBN = '$ISBN', description = '$description', publishDate = '$publishDate', mediaType = '$mediaType', status = '$status', pubName = '$pubName', pubAddress = '$pubAddress', pubSize = '$pubSize', image = '$image->fileName' WHERE id = {$id}";
     }else{
-        $sql = "UPDATE products SET name = '$name', price = $price WHERE id = {$id}";
+        $sql = "UPDATE library SET title = '$title', authFirstName = '$authFirstName', authLastName = '$authLastName', ISBN = '$ISBN', description = '$description', publishDate = '$publishDate', mediaType = '$mediaType', status = '$status', pubName = '$pubName', pubAddress = '$pubAddress', pubSize = '$pubSize' WHERE id = {$id}";
     }    
     if ($connect->query($sql) === TRUE) {
         $class = "success";
         $message = "The record was successfully updated";
-        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
+        $uploadError = ($image->error !=0)? $image->ErrorMessage :'';
     } else {
         $class = "danger";
         $message = "Error while updating record : <br>" . $connect->error;
-        $uploadError = ($picture->error !=0)? $picture->ErrorMessage :'';
+        $uploadError = ($image->error !=0)? $image->ErrorMessage :'';
     }
     $connect->close();    
 } else {

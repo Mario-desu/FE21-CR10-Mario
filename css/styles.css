@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+   
+}
+
+
+body {
+    background: url("https://images.pexels.com/photos/3646172/pexels-photo-3646172.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    background-size: cover;
+    min-height: 100vh;
+}
+
+
+/*add background, because of background-image*/
+fieldset {
+    background: whitesmoke;
+    padding: 2rem;
+}
+
+/*table styling*/
+
+.manageProduct {           
+    margin: auto;
+}
+
+.img-thumbnail {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.manageProduct .table-style {
+    background-color: #d6cfc7;
+}
+
+td {          
+    text-align: center;
+    vertical-align: middle;
+}
+tr {
+    text-align: center;
+    
+}
+
+a {text-decoration: none;}
+
+/*Navbar*/
+
+.nav-style {
+
+  background-color: #cec1d6
+}
+
+/*change font-size navbar*/
+
+.nav-style a {
+    font-size: 1.8em;
+}
+
+
+
+footer {
+    background-color: #cec1d6;
+}
+

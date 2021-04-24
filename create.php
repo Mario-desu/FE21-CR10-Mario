@@ -9,13 +9,16 @@
        <style>
            fieldset {
                margin: auto;
-               margin-top: 100px;
-               width: 60% ;
+               margin-top: 13vh;
+               margin-bottom: 13vh;
+               width: 70% ;
            }      
        </style>
    </head>
    <body>
-   <fieldset>
+              <!--Navbar-component-->
+              <?php include_once "components/nav.php";?> 
+        <fieldset>
             <legend class='h2'>Add Media</legend>
             <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                 <table class='table'>
@@ -75,5 +78,7 @@
                 </table>
             </form>
         </fieldset>
+        <!--Footer-component-->
+       <?php include_once "components/footer.php";?>
    </body>
 </html>
