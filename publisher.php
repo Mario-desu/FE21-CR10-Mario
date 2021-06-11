@@ -8,7 +8,8 @@ $tbody=''; //this variable will hold the body for the table
 if(mysqli_num_rows($result)  > 0) {     
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
         $tbody .= "<tr>
-            <td><a href=".$row['subpage'].">".$row['pubName']."</a></td>
+            <td><a href='puball.php?id=" .$row['pubName']."'>".$row['pubName']."</a></td>
+            
             <td>" .$row['pubAddress']."</td>
             <td>" .$row['pubSize']."</td>
             <td>for all media of this Publisher <b>click name!</b></td>
@@ -59,5 +60,7 @@ $connect->close();
         </div>
         <!--Footer-component-->
         <?php include_once "components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "components/boot_js.php";?>
     </body>
 </html>

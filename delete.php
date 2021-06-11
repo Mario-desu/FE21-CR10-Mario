@@ -73,6 +73,8 @@ if ($_GET['id']) {
         </fieldset>
         <!--Footer-component-->
         <?php include_once "components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "components/boot_js.php";?>
     </body>
 
 </html>

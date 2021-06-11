@@ -1,6 +1,11 @@
 <?php 
 require_once 'actions/db_connect.php';
-$sql = "SELECT * FROM library WHERE pubName ='HarperCollins'";
+if ($_GET['id']) {
+    $id = $_GET['id'];
+
+}
+
+$sql = "SELECT * FROM library WHERE pubName = '$id'";
 $result = mysqli_query($connect ,$sql);
 $tbody=''; //this variable will hold the body for the table
 if(mysqli_num_rows($result)  > 0) {     
@@ -33,15 +38,30 @@ $connect->close();
         <title>CR10 Mario CRUD</title>
         <?php require_once 'components/boot.php'?>
         <link rel="stylesheet" href="css/styles.css">
+        <style type="text/css">
+            .manageProduct {           
+                margin: auto;
+            }
+            .img-thumbnail {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            td {          
+                text-align: left;
+                vertical-align: middle;
+            }
+            tr {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        <!--Navbar-component-->
+     <!--Navbar-component-->
        <?php include_once "components/nav.php";?>
-
         <div class="manageProduct w-75 mt-3 mb-5">    
 
-            <p class='h2'>Harper Collins</p>
-            <table class='table table-striped mb-5'>
+            <p class='h2'><?php echo $id ?></p>
+            <table class='table table-striped'>
                 <thead class='table-success'>
                     <tr>
                         <th>Picture</th>
@@ -62,5 +82,7 @@ $connect->close();
         </div>
         <!--Footer-component-->
         <?php include_once "components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "components/boot_js.php";?>
     </body>
 </html>

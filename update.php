@@ -60,7 +60,7 @@ if ($_GET['id']) {
                     </tr>    
                     <tr>
                         <th>First Name Author/Artist/Director</th>
-                        <td><input class='form-control' type="text" name="authFirstName"  placeholder="First Name or -" value="<?php echo $authFirstName ?>" /></td>
+                        <td><input class='form-control' type="text" name="authFirstName"  placeholder="First Name" value="<?php echo $authFirstName ?>" /></td>
                     </tr>
                     <tr>
                         <th>Last Name Author/Artist/Director</th>
@@ -68,7 +68,7 @@ if ($_GET['id']) {
                     </tr>
                     <tr>
                         <th>ISBN</th>
-                        <td><input class='form-control' type="text" name="ISBN"  placeholder="ISBN or -" value="<?php echo $ISBN ?>"/></td>
+                        <td><input class='form-control' type="text" name="ISBN"  placeholder="ISBN" value="<?php echo $ISBN ?>"/></td>
                     </tr>
                     <tr>
                         <th>Description</th>
@@ -113,5 +113,6 @@ if ($_GET['id']) {
         </fieldset>
         <!--Footer-component-->
         <?php include_once "components/footer.php";?>
-    </body>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "components/boot_js.php";?>
 </html>

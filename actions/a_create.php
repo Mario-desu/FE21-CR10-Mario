@@ -58,5 +58,8 @@ if ($_POST) {
                 <a href='../index.php'><button class="btn btn-primary"  type='button'>Home</button></a>
            </div >
        </div>
+       <?php include_once "../components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "../components/boot_js.php";?>
    </body>
 </html>

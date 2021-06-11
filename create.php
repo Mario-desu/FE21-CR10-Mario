@@ -28,7 +28,7 @@
                     </tr>    
                     <tr>
                         <th>First Name Author/Artist/Director</th>
-                        <td><input class='form-control' type="text" name="authFirstName"  placeholder="First Name or -" /></td>
+                        <td><input class='form-control' type="text" name="authFirstName"  placeholder="First Name" /></td>
                     </tr>
                     <tr>
                         <th>Last Name Author/Artist/Director</th>
@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <th>ISBN</th>
-                        <td><input class='form-control' type="text" name="ISBN"  placeholder="ISBN or -" /></td>
+                        <td><input class='form-control' type="text" name="ISBN"  placeholder="ISBN" /></td>
                     </tr>
                     <tr>
                         <th>Description</th>
@@ -80,5 +80,7 @@
         </fieldset>
         <!--Footer-component-->
        <?php include_once "components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "components/boot_js.php";?>
    </body>
 </html>
