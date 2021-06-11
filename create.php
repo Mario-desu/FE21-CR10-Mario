@@ -4,9 +4,9 @@
        <meta charset="UTF-8">
         <meta name="viewport" content ="width=device-width, initial-scale=1.0">
        <?php require_once 'components/boot.php'?>
-       <link rel="stylesheet" href="css/styles.css">
        <title>CR10 Mario CRUD</title>
        <style>
+           <?php include "css/styles.css" ?> 
            fieldset {
                margin: auto;
                margin-top: 13vh;

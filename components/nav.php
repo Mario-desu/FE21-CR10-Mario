@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light nav-style" id="navi"> <!--class for CSS-->
+<nav class="navbar navbar-expand-lg navbar-light nav-style shadow-lg" id="navi"> <!--class for CSS-->
   <div class="container">
   <a class="navbar-brand" href="index.php"><img src="pictures/logo.png" class="img-fluid" alt="Logo"></a><!--Logo NavBar-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

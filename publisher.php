@@ -6,7 +6,8 @@ $tbody=''; //this variable will hold the body for the table
 
 //created column in db for publisher subpage, so that it is dynamic
 if(mysqli_num_rows($result)  > 0) {     
-    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){        
+         
         $tbody .= "<tr>
             <td><a href='puball.php?id=" .$row['pubName']."'>".$row['pubName']."</a></td>
             
@@ -29,14 +30,11 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR10 Mario CRUD</title>
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">
         <style>
-            .manageProduct table{
-                margin-bottom: 40vh;
-            }
+            <?php include "css/styles.css" ?>
+        </style>
 
-        </style>    
-       
+
     </head>
     <body>
                 <!--Navbar-component-->
@@ -44,7 +42,7 @@ $connect->close();
         <div class="manageProduct w-75 mt-5 mb-5">    
             
             <p class='h2'>Publishers</p>
-            <table class='table table-striped'>
+            <table class='table table-striped shadow-lg rounded'>
                 <thead class='table-success'>
                     <tr>
                         <th>Publisher</th>

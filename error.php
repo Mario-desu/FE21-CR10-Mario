@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <title>Error</title>
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">    
+        <style>
+            <?php include "css/styles.css" ?> 
+        </style>   
     </head>
     <body>
         <!--Navbar-component-->

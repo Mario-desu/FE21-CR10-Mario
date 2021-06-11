@@ -63,8 +63,10 @@ if ($_GET['id']) {
     <head>
         <title>CR10 Mario CRUD</title>
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">
-        <style type= "text/css">
+        
+        <style>
+
+            <?php include "css/styles.css" ?> 
             .card {
                 margin: auto;
                 margin-top: 13vh;

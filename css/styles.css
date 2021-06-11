@@ -23,9 +23,15 @@ fieldset {
 
 /*table styling*/
 
-.manageProduct {           
+
+
+.manageProduct {
     margin: auto;
+    width: 80% !important;
+    padding-bottom: 15vh;
 }
+
+
 
 .img-thumbnail {
     width: 70px !important;
@@ -64,10 +70,23 @@ a {text-decoration: none;}
 
 footer {
     background-color: #cec1d6;
+
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+ 
+
 }
 
 /*Media query for index table*/
 
+
+@media screen and (max-width:768px) {
+
+    .manageProduct {width: 100% !important;}
+    }
+
 @media screen and (max-width:1009px) {
-    .deleteBtn {margin-top: 10px}
+    .deleteBtn {margin-top: 6px}
  }

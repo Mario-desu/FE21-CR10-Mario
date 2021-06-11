@@ -42,13 +42,22 @@ $connect->close();
         <title>CR10 Mario CRUD</title>
         <!--Bootstrap component-->
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">
         <!--Font Awesome-->
         <script src="https://kit.fontawesome.com/3543c7cdbb.js" crossorigin="anonymous"></script>
         <style>
+            <?php include "css/styles.css" ?> 
+            
+            .manageProduct {
+                width: 80% !important;}
+
+            @media screen and (max-width:768px) {
+        
+            .manageProduct {width: 100% !important;}
+            }
             @media screen and (max-width:1009px) {
-        .deleteBtn {margin-top: 10px}
-        }
+            .deleteBtn {margin-top: 10px}
+            
+            }
         </style>     
     </head>
     <body>
@@ -63,21 +72,21 @@ $connect->close();
             </div>
             <p class='h2'>Media</p>
             <div style="overflow-x:auto;">
-            <table class='table table-striped'>
-                <thead class='table-style'>
-                    <tr>
-                        <th>Picture</th>
-                        <th>Title (status)</th>
-                        <th>Author/Artist/Director</th>
-                        <th>Type</th>
-                        <th>Action</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="bg-light">
-                    <?php echo "$tbody";?>
-                </tbody>
-            </table>
+                <table class='table table-striped shadow-lg rounded'>
+                    <thead class='table-style'>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Title (status)</th>
+                            <th>Author/Artist/Director</th>
+                            <th>Type</th>
+                            <th>Action</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-light">
+                        <?php echo "$tbody";?>
+                    </tbody>
+                </table>
             </div>
         </div>
          <!--Footer-component-->

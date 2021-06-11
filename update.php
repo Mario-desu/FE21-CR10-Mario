@@ -34,23 +34,26 @@ if ($_GET['id']) {
         <title>Edit Media</title>
         <?php require_once 'components/boot.php'?>
         <link rel="stylesheet" href="css/styles.css">
-        <style type= "text/css">
+        <style>
+
+             <?php include "style.css" ?>
             fieldset {
                 margin: auto;
                 margin-top: 12vh;
                 margin-bottom: 12vh;
-                width: 70% ;
+                width: 92% ;
             }  
             .img-thumbnail{
                 width: 70px !important;
                 height: 70px !important;
             }     
-        </style>
+
+          </style>
     </head>
     <body>
         <!--Navbar-component-->
        <?php include_once "components/nav.php";?>
-        <fieldset>
+        <fieldset class="shadow-lg rounded">
             <legend class='h2'>Update request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $image ?>' alt="<?php echo $title ?>"></legend>
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
                 <table class="table">

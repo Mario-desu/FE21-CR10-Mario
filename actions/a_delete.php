@@ -25,7 +25,10 @@ if ($_POST) {
     <head>
         <meta charset="UTF-8">
         <title>Delete</title>
-        <?php require_once '../components/boot.php'?>  
+        <?php require_once '../components/boot.php'?>
+        <style>
+          <?php include_once "../components/nav.php";?>  
+        </style>
     </head>
     <body>
         <div class="container">

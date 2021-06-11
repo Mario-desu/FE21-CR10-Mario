@@ -36,8 +36,8 @@ if ($_GET['id']) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR10 Mario CRUD</title>
         <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">
-        <style type= "text/css">
+        <style>
+            <?php include "css/styles.css" ?> 
             fieldset {
                 margin: auto;
                 margin-top: 16vh;
@@ -53,7 +53,7 @@ if ($_GET['id']) {
     <body>
          <!--Navbar-component-->
        <?php include_once "components/nav.php";?>
-        <fieldset>
+        <fieldset class="shadow-lg rounded">
             <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $image ?>' alt="<?php echo $title ?>"></legend>
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
