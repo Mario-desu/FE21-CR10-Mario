@@ -38,12 +38,7 @@ if ($_GET['id']) {
         <?php require_once 'components/boot.php'?>
         <style>
             <?php include "css/styles.css" ?> 
-            fieldset {
-                margin: auto;
-                margin-top: 16vh;
-                margin-bottom: 16vh;
-                width: 70% ;
-            }     
+    
             .img-thumbnail{
                 width: 70px !important;
                 height: 70px !important;

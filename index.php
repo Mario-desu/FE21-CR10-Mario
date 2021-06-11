@@ -46,18 +46,7 @@ $connect->close();
         <script src="https://kit.fontawesome.com/3543c7cdbb.js" crossorigin="anonymous"></script>
         <style>
             <?php include "css/styles.css" ?> 
-            
-            .manageProduct {
-                width: 80% !important;}
-
-            @media screen and (max-width:768px) {
-        
-            .manageProduct {width: 100% !important;}
-            }
-            @media screen and (max-width:1009px) {
-            .deleteBtn {margin-top: 10px}
-            
-            }
+      
         </style>     
     </head>
     <body>
@@ -66,7 +55,7 @@ $connect->close();
 
 
 
-        <div class="manageProduct w-75 mt-3 mb-5">    
+        <div class="manageProduct mt-3 mb-5">    
             <div class='mb-3'>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add media</button></a>
             </div>

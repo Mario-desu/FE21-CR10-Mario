@@ -27,10 +27,11 @@ if ($_POST) {
         <title>Delete</title>
         <?php require_once '../components/boot.php'?>
         <style>
-          <?php include_once "../components/nav.php";?>  
+          <?php include_once "../css/styles.php";?>  
         </style>
     </head>
     <body>
+    <?php include_once "../components/nav.php";?>  
         <div class="container">
             <div class="mt-3 mb-3">
                 <h1>Delete request response</h1>

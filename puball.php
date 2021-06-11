@@ -60,18 +60,7 @@ $connect->close();
         <style>
 
             <?php include "css/styles.css" ?>   
-            .manageProduct {
-                margin: auto;
-                width: 80% !important;}
-
-            @media screen and (max-width:768px) {
-
-            .manageProduct {width: 100% !important;}
-            }
-
-            @media screen and (max-width:1130px) {
-            .deleteBtn {margin-top: 10px}
-            }
+           
         </style>
   
     </head>

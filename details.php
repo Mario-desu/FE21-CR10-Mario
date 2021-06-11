@@ -27,7 +27,7 @@ if ($_GET['id']) {
 
         $table = " <div class='row'>
         <div class='col-sm-4 my-3'>
-            <div class='card p-2 shadow-lg' style='width: 50rem;'>
+            <div class='card p-2 shadow-lg' style='width: 30rem;'>
                 <img src='pictures/" .$image."' class='card-img-top' alt=' .$title.'>
                 <div class='card-body'>
                     <h5 class='card-title'>" .$title."</h5>
@@ -67,12 +67,7 @@ if ($_GET['id']) {
         <style>
 
             <?php include "css/styles.css" ?> 
-            .card {
-                margin: auto;
-                margin-top: 13vh;
-                margin-bottom: 13vh;
-                }  
-   
+
         </style>
     </head>
     <body>

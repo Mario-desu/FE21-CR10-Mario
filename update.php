@@ -36,15 +36,10 @@ if ($_GET['id']) {
         <link rel="stylesheet" href="css/styles.css">
         <style>
 
-             <?php include "style.css" ?>
-            fieldset {
-                margin: auto;
-                margin-top: 12vh;
-                margin-bottom: 12vh;
-                width: 92% ;
-            }  
+             <?php include "css/styles.css" ?>
+
             .img-thumbnail{
-                width: 70px !important;
+                
                 height: 70px !important;
             }     
 

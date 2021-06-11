@@ -25,10 +25,12 @@ fieldset {
 
 
 
-.manageProduct {
+.manageProduct, fieldset {
     margin: auto;
+    margin-top: 8vh;
+    margin-bottom: 15vh !important;
     width: 80% !important;
-    padding-bottom: 15vh;
+
 }
 
 
@@ -66,6 +68,15 @@ a {text-decoration: none;}
     font-size: 1.8em;
 }
 
+/*detail-page*/
+
+.card {
+    margin: auto;
+    margin-top: 13vh;
+    margin-bottom: 13vh;
+    }  
+
+
 
 
 footer {
@@ -84,7 +95,7 @@ footer {
 
 @media screen and (max-width:768px) {
 
-    .manageProduct {width: 100% !important;}
+    .manageProduct, fieldset {width: 100% !important;}
     }
 
 @media screen and (max-width:1009px) {

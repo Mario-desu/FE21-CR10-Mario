@@ -7,12 +7,6 @@
        <title>CR10 Mario CRUD</title>
        <style>
            <?php include "css/styles.css" ?> 
-           fieldset {
-               margin: auto;
-               margin-top: 13vh;
-               margin-bottom: 13vh;
-               width: 70% ;
-           }      
        </style>
    </head>
    <body>

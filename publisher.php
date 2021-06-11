@@ -39,7 +39,7 @@ $connect->close();
     <body>
                 <!--Navbar-component-->
        <?php include_once "components/nav.php";?>
-        <div class="manageProduct w-75 mt-5 mb-5">    
+        <div class="manageProduct mt-5 mb-5">    
             
             <p class='h2'>Publishers</p>
             <table class='table table-striped shadow-lg rounded'>
