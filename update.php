@@ -1,6 +1,27 @@
 <?php
 require_once 'actions/db_connect.php';
 
+// for dropdown availability
+
+$status = "";
+$result = mysqli_query($connect, "SELECT * FROM library GROUP BY status");
+
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    $status .=
+        "<option value='{$row['status']}'>{$row['status']}</option>";
+}
+
+// for dropdown publisher size
+
+$pubSize = "";
+$result = mysqli_query($connect, "SELECT * FROM library GROUP BY pubSize");
+
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    $pubSize .=
+        "<option value='{$row['pubSize']}'>{$row['pubSize']}</option>";
+}
+
+
 if ($_GET['id']) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM library WHERE id = {$id}";
@@ -14,10 +35,10 @@ if ($_GET['id']) {
         $description = $data['description'];
         $publishDate = $data['publishDate'];
         $mediaType = $data['mediaType'];
-        $status = $data['status'];
+        // $status = $data['status'];
         $pubName = $data['pubName'];
         $pubAddress = $data['pubAddress'];
-        $pubSize = $data['pubSize'];
+        // $pubSize = $data['pubSize'];
         $image = $data['image'];
     } else {
         header("location: error.php");
@@ -82,7 +103,11 @@ if ($_GET['id']) {
                     </tr>
                     <tr>
                         <th>Availability Status</th>
-                        <td><input class='form-control' type="text" name="status"  placeholder="Status" value="<?php echo $status ?>"/></td>
+                        <td>
+                        <select select class="form-select" name="status" aria-label="Default select example">
+                            <?php echo  $status; ?>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Publisher</th>
@@ -94,7 +119,11 @@ if ($_GET['id']) {
                     </tr>
                     <tr>
                         <th>Publisher Size</th>
-                        <td><input class='form-control' type="text" name="pubSize"  placeholder="Publisher Size" value="<?php echo $pubSize ?>"/></td>
+                        <td>
+                        <select select class="form-select" name="pubSize" aria-label="Default select example">
+                            <?php echo  $pubSize; ?>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Picture</th>
