@@ -21,6 +21,16 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
         "<option value='{$row['pubSize']}'>{$row['pubSize']}</option>";
 }
 
+// for dropdown media type
+
+$type = "";
+$result = mysqli_query($connect, "SELECT * FROM library GROUP BY mediaType");
+
+while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    $type .=
+        "<option value='{$row['mediaType']}'>{$row['mediaType']}</option>";
+}
+
 
 ?>
 
@@ -70,7 +80,11 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
                     </tr>
                     <tr>
                         <th>Media Type</th>
-                        <td><input class='form-control' type="text" name="mediaType"  placeholder="Media Type" /></td>
+                        <td>
+                        <select select class="form-select" name="mediaType" aria-label="Default select example">
+                            <?php echo  $type; ?>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Availability Status</th>

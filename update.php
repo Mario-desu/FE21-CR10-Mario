@@ -1,25 +1,9 @@
 <?php
 require_once 'actions/db_connect.php';
 
-// for dropdown availability
 
-$status = "";
-$result = mysqli_query($connect, "SELECT * FROM library GROUP BY status");
 
-while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    $status .=
-        "<option value='{$row['status']}'>{$row['status']}</option>";
-}
 
-// for dropdown publisher size
-
-$pubSize = "";
-$result = mysqli_query($connect, "SELECT * FROM library GROUP BY pubSize");
-
-while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-    $pubSize .=
-        "<option value='{$row['pubSize']}'>{$row['pubSize']}</option>";
-}
 
 
 if ($_GET['id']) {
@@ -35,11 +19,74 @@ if ($_GET['id']) {
         $description = $data['description'];
         $publishDate = $data['publishDate'];
         $mediaType = $data['mediaType'];
-        // $status = $data['status'];
+        $aStatus = $data['status'];
         $pubName = $data['pubName'];
         $pubAddress = $data['pubAddress'];
-        // $pubSize = $data['pubSize'];
+        $publisherSize = $data['pubSize'];
         $image = $data['image'];
+
+        // for dropdown availability
+
+        $status = "";
+        $result = mysqli_query($connect, "SELECT * FROM library GROUP BY status");
+
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+            if($aStatus==$row["status"]){
+                $selected="selected"; 
+            }else{
+                $selected="";		//Vorauswahl wird gefüllt
+            }
+
+
+            $status .=
+                "<option value='{$row['status']}' $selected>{$row['status']}</option>";
+        }
+
+
+
+        // for dropdown publisher size
+
+        $pubSize = "";
+        $result = mysqli_query($connect, "SELECT * FROM library GROUP BY pubSize");
+
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+            if($publisherSize==$row["pubSize"]){
+                $selected="selected"; 
+            }else{
+                $selected="";		//Vorauswahl wird gefüllt
+            }
+
+
+            $pubSize .=
+                "<option value='{$row['pubSize']}' $selected>{$row['pubSize']}</option>";
+        }
+
+
+
+
+
+        // for dropdown media type
+
+        $type = "";
+        $result = mysqli_query($connect, "SELECT * FROM library GROUP BY mediaType");
+
+        while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+
+            if($mediaType==$row["mediaType"]){
+                $selected="selected"; 
+            }else{
+                $selected="";		//Vorauswahl wird gefüllt
+            }
+
+
+            $type .=
+                "<option value='{$row['mediaType']}' $selected>{$row['mediaType']}</option>";
+        }
+
+
+
     } else {
         header("location: error.php");
     }
@@ -99,7 +146,11 @@ if ($_GET['id']) {
                     </tr>
                     <tr>
                         <th>Media Type</th>
-                        <td><input class='form-control' type="text" name="mediaType"  placeholder="Media Type" value="<?php echo $mediaType ?>"/></td>
+                        <td>
+                        <select select class="form-select" name="status" aria-label="Default select example">
+                            <?php echo  $type; ?>
+                        </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Availability Status</th>
